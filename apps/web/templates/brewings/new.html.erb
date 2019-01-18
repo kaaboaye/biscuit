@@ -1,0 +1,31 @@
+<h1>Dodawanie sposobu zaparzania do <%= tea.name %></h2>
+
+<%=
+  form_for :brewing, '/brewings' do
+    hidden_field :tea_id, value: tea.id
+
+    div class: 'input' do
+      label :amount
+      number_field :amount
+    end
+    
+    div class: 'input' do
+      label :timespan
+      number_field :timespan
+    end
+    
+    div class: 'input' do
+      label :water_temp
+      number_field :water_temp
+    end
+    
+    div class: 'input' do
+      label :taste
+      text_field :taste
+    end
+
+    div class: 'controls' do
+      submit 'Create brewing'
+    end
+  end
+%>

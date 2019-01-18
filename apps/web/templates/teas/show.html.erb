@@ -1,0 +1,53 @@
+<% if tea == nil %>
+<h1>404 nie ma herbatki</h1>
+<% else %>
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+
+<h1><%= tea.name %></h1>
+
+<h2>Sposoby parzenia</h2>
+<div>
+  
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ilość herbaty</th>
+      <th>Czas zaparzania</th>
+      <th>Temperatura wody</th>
+      <th>Smak</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% tea.brewings.each do |brewing| %>
+      <tr>
+        <td><%= brewing.amount %> g</td>
+        <td><%= brewing.timespan %> s</td>
+        <td><%= brewing.water_temp %> ºC</td>
+        <td><%= brewing.taste %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% end %>

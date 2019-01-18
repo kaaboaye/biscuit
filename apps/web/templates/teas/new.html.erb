@@ -1,0 +1,14 @@
+<h1>Dodawanie herbatki</h2>
+
+<%=
+  form_for :tea, '/teas' do
+    div class: 'input' do
+      label :name
+      text_field :name
+    end
+
+    div class: 'controls' do
+      submit 'Create Tea'
+    end
+  end
+%>

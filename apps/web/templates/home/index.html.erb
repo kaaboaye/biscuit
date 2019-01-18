@@ -1,0 +1,18 @@
+<h1>Wszystkie herbaty</h1>
+
+<div>
+  <a href="/teas/new">Dodaj herbatkę</a>
+</div>
+
+<% if teas.any? %>
+  <ul>
+    <% teas.each do |tea| %>
+      <li>
+        <a href="/teas/<%= tea.id %>"><%= tea.name %></a>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>aint no herbatek :(</p>
+<% end %>
+

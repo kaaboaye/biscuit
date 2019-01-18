@@ -18,7 +18,8 @@ Hanami.configure do
     #    adapter :sql, 'postgresql://localhost/biscuit_development'
     #    adapter :sql, 'mysql://localhost/biscuit_development'
     #
-    adapter :sql, ENV.fetch('DATABASE_URL')
+    # adapter :sql, ENV.fetch('DATABASE_URL')
+    adapter :sql, 'postgresql://postgres:mysecretpassword@localhost:3255/postgres'
 
     ##
     # Migrations

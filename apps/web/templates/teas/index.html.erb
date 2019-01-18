@@ -5,13 +5,21 @@
 </div>
 
 <% if teas.any? %>
-  <ul>
-    <% teas.each do |tea| %>
-      <li>
-        <a href="/teas/<%= tea.id %>"><%= tea.name %></a>
-      </li>
-    <% end %>
-  </ul>
+  <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+    <thead>
+      <tr>
+        <th>Nazwa herbaty</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% teas.each do |tea| %>
+        <tr>
+          <td><a href="/teas/<%= tea.id %>"><%= tea.name %></a></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 <% else %>
   <p>aint no herbatek :(</p>
 <% end %>

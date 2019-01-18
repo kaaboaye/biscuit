@@ -5,9 +5,9 @@ module Web
         include Web::Action
 
         def call(params)
-          TeaRepository.new.create(params[:tea])
+          tea = TeaRepository.new.create(params[:tea])
 
-          redirect_to '/'
+          redirect_to "/teas/#{tea.id}"
         end
       end
     end

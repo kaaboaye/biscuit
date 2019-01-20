@@ -4,10 +4,10 @@ module Web
       class Create
         include Web::Action
 
-        def call(params)
-          tea = TeaRepository.new.create(params[:tea])
+        expose :tea
 
-          redirect_to "/teas/#{tea.id}"
+        def call(params)
+          @tea = TeaRepository.new.create(params[:tea])
         end
       end
     end

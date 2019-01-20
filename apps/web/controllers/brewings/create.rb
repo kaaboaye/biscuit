@@ -4,10 +4,16 @@ module Web
       class Create
         include Web::Action
 
-        def call(params)
-          BrewingRepository.new.create params[:brewing]
+        expose :brewing
 
-          redirect_to "/teas/#{params[:brewing][:tea_id]}"
+        def call(params)
+          @brewing = BrewingRepository.new.create({
+            tea_id: params[:brewing][:teaId],
+            amount: params[:brewing][:amount],
+            timespan: params[:brewing][:timespan],
+            water_temp: params[:brewing][:waterTemp],
+            taste: params[:brewing][:taste]
+          })
         end
       end
     end

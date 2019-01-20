@@ -8,6 +8,17 @@ module Web
       # BASIC
       #
 
+
+      require 'hanami/controller'
+
+      Hanami::Controller.configure do
+        default_headers({
+          'Access-Control-Allow-Origin' => '*',
+          'Access-Control-Allow-Methods' => 'POST, GET, OPTIONS',
+          'Access-Control-Allow-Headers' => 'Content-Type'
+        })
+      end
+
       # Define the root path of this application.
       # All paths specified in this configuration are relative to path below.
       #
@@ -103,7 +114,7 @@ module Web
       #             (only `:json` is supported)
       #           Object, the parser
       #
-      # body_parsers :json
+      body_parsers :json
 
       # When it's true and the router receives a non-encrypted request (http),
       # it redirects to the secure equivalent (https). Disabled by default.

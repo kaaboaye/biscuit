@@ -1,5 +1,7 @@
 # Biscuit
 
+> Read more at https://github.com/kaaboaye/biscuit-frontend
+
 Welcome to your new Hanami project!
 
 ## Setup
